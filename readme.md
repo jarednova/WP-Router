@@ -1,4 +1,4 @@
-=== WP Router ===
+## WP Router
 Contributors: jbrinley
 Donate link: https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=A69NZPKWGB6H2
 Tags: URL mapping, callback functions
@@ -8,7 +8,7 @@ Stable tag: trunk
 
 Provides a simple API for mapping requests to callback functions.
 
-== Description ==
+### Description
 
 WordPress's rewrite rules and query variables provide a powerful system
 for mapping URL strings to collections of posts. Every request is parsed
@@ -25,16 +25,16 @@ URL to your designated callback function and display the return value in the pag
 
 Created by [Flightless](http://flightless.us)
 
-== Installation ==
+### Installation
 
 1. Download and unzip the plugin
 1. Upload the `WP-Router` folder to the `/wp-content/plugins/` directory
 1. Activate the plugin through the 'Plugins' menu in WordPress
 1. You should see the sample page at http://example.org/wp_router/sample/. Apart from that, there is no public UI for this plugin. You will not see any changes unless the plugin's API is called by another active plugin.
 
-== Usage ==
+### Usage
 
-= Creating Routes =
+#### Creating Routes 
 
 * Your plugin should hook into the `wp_router_generate_routes` action.
 	The callback should take one argument, a `WP_Router` object.
@@ -123,11 +123,11 @@ argument to the callback function. If the file `sample-page.php` is found in the
 it will be used as the template, otherwise `sample-page.php` in your plugin directory will
 be used (if that's not found either, fall back to `route-wp-router-sample.php`, etc.).
 
-= Editing Routes =
+#### Editing Routes
 
 * You can hook into the `wp_router_alter_routes` action to modify routes created by other plugins. The callback should take one argument, a `WP_Router` object.
 
-= Public API Functions =
+#### Public API Functions =
 
 Creating or changing routes should always occur in the context of the `wp_router_generate_routes` or `wp_router_alter_routes` actions, using the `WP_Router` object supplied to your callback function.
 
